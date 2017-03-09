@@ -3,9 +3,9 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>De Nieuwlandse Haven</h1>
 @stop
 
 @section('content')
-    <p>You are logged in!</p>
+    <p>Welkom beste ....</p>
 @stop
