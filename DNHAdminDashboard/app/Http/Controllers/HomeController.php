@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+//namespace app toegevoegd om alle leden op te kunnen halen
+use App;
+
 class HomeController extends Controller {
     /**
      * Create a new controller instance.
@@ -25,24 +28,8 @@ class HomeController extends Controller {
 
     public function facturen() {
 
-        // deze data moet uit de dataabase komen.
-        return view('/admin/facturen', [
-            'leden' => array(
-                '1' => array(
-                    'voornaam' => 'Giorgio',
-                    'achternaam' => 'Joziasse',
-                    'woonplaats' => 'Middelburg',
-                    'boten' => 5,
-                    'totaalbedrag' => 344
-                ),
-                '2' => array(
-                    'voornaam' => 'Bas',
-                    'achternaam' => 'Karelse',
-                    'woonplaats' => 'Middelburg',
-                    'boten' => 1,
-                    'totaalbedrag' => 788
-                ),
-            )
-        ]);
+        $members = App\Member::all();
+        // deze data moet uit de database komen
+        return view('/admin/facturen', compact('members'));
     }
 }

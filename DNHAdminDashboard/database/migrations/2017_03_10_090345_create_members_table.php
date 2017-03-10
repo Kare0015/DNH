@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLedenTable extends Migration
+class CreateMembersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateLedenTable extends Migration
      */
     public function up()
     {
-        Schema::create('leden', function (Blueprint $table) {
+        Schema::create('members', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('voornaam');
+            $table->text('achternaam');
+            $table->text('woonplaats');
+            $table->integer('boten');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateLedenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('leden');
+        Schema::dropIfExists('members');
     }
 }
