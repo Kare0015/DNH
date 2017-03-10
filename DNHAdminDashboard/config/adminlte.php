@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'title' => 'De Nieuwlandse Haven',
+    'title' => '',
 
-    'title_prefix' => '',
+    'title_prefix' => 'De Nieuwlandse Haven',
 
     'title_postfix' => '',
 
@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'logo' => 'DNH Beheer',
+    'logo' => '<strong>De Nieuwlandse Haven</strong> Administratie Dashboard',
 
     'logo_mini' => 'DNH',
 
@@ -108,7 +108,7 @@ return [
     */
 
     'menu' => [
-        'Leden Behern',
+        'Leden Beheren',
         [
             'text' => 'Blog',
             'url'  => 'admin/blog',
