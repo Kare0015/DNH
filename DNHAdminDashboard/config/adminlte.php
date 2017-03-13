@@ -108,18 +108,23 @@ return [
     */
 
     'menu' => [
-        'Leden Beheren',
-        [
-            'text' => 'Blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
+//        'Leden Beheren',
+//        [
+//            'text' => 'Blog',
+//            'url'  => 'admin/blog',
+//            'can'  => 'manage-blog',
+//        ],
         [
             'text'        => 'Home',
             'url'         => 'home',
             'icon'        => 'home',
 //            'label'       => 4 ,
-            'label_color' => 'success',
+//            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Ledenbeheer',
+            'url'         => 'members',
+            'icon'        => 'users',
         ],
         [
             'text'        => 'Facturen',
