@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index');
 
 
 Route::get('/admin/facturen', 'HomeController@facturen');
+
+Route::get('/admin/enkelefactuur', 'HomeController@enkelefactuur');

@@ -36,4 +36,8 @@ class HomeController extends Controller {
         
         return view('/admin/facturen', $data);
     }
+
+    public function enkelefactuur() {
+
+    }
 }
