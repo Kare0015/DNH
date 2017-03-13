@@ -10,12 +10,9 @@
     <div class="row">
         <div class="col-xs-12">
             <p>Selecteer hier de gebruikers om de facturen te genereren.</p>
-
-
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">Leden</h3>
-
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -46,9 +43,10 @@
                             </tr>
                         @endforeach
                         </tbody>
-                        </table>
-                    <br/>
-                    <button class="btn btn-primary" type="submit">Genereer {{$totalFacturen}} facturen</button>
+                    </table>
+                    <br />
+                    <a class="btn btn-primary" href="/admin/facturen/overview">Genereer alle facturen ({{$totalFacturen}})</a>
+
                 </div>
                 <!-- /.box-body -->
             </div>
