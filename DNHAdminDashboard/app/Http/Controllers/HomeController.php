@@ -29,9 +29,11 @@ class HomeController extends Controller {
     public function facturen() {
         $members = App\Member::all();
         $totalFacturen = count($members);
-        $data = array($members,$totalFacturen);
-        var_dump($data);
-
-        return view('/admin/facturen', compact('data'));
+        $data = array(
+            'members' => $members,
+            'totalFacturen' => $totalFacturen
+        );
+        
+        return view('/admin/facturen', $data);
     }
 }

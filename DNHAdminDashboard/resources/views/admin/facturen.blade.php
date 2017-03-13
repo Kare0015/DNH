@@ -30,10 +30,9 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {{ dd($data) }}
-{{--                        {{ dd(get_defined_vars()) }}--}}
-                        @foreach($data['members'] as $member)
-                            {{--{{dd($lid)}}--}}
+                        {{--{{ dd(get_defined_vars()) }}--}}
+                        {{--{{ dd(get_defined_vars()['__data']) }}--}}
+                        @foreach($members as $member)
                             <tr>
                                 <td>{{$member['voornaam']}}</td>
                                 <td>{{$member['achternaam']}}</td>
@@ -45,7 +44,7 @@
                         </tbody>
                     </table>
                     <br />
-                    <button class="btn btn-primary" type="submit">Genereer x facturen</button>
+                    <button class="btn btn-primary" type="submit">Genereer {{$totalFacturen}} facturen</button>
                 </div>
                 <!-- /.box-body -->
             </div>
