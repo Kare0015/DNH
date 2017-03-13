@@ -30,8 +30,9 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {{--{{ dd(get_defined_vars()) }}--}}
-                        @foreach($members as $member)
+                        {{ dd($data) }}
+{{--                        {{ dd(get_defined_vars()) }}--}}
+                        @foreach($data['members'] as $member)
                             {{--{{dd($lid)}}--}}
                             <tr>
                                 <td>{{$member['voornaam']}}</td>
