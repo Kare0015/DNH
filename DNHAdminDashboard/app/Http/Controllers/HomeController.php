@@ -33,7 +33,13 @@ class HomeController extends Controller {
             'members' => $members,
             'totalFacturen' => $totalFacturen
         );
-        
+
         return view('/admin/facturen', $data);
+    }
+
+    public function facturenOverview(){
+        $members = App\Member::all();
+        return view('/facturen/overview', compact('members'));
+
     }
 }
