@@ -30,14 +30,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($leden as $lid)
+                        {{--{{ dd(get_defined_vars()) }}--}}
+                        @foreach($members as $member)
                             {{--{{dd($lid)}}--}}
                             <tr>
-                                <td>{{$lid['voornaam']}}</td>
-                                <td>{{$lid['achternaam']}}</td>
-                                <td>{{$lid['woonplaats']}}</td>
-                                <td>{{$lid['boten']}}</td>
-                                <td>€ {{$lid['totaalbedrag']}}</td>
+                                <td>{{$member['voornaam']}}</td>
+                                <td>{{$member['achternaam']}}</td>
+                                <td>{{$member['woonplaats']}}</td>
+                                <td>{{$member['boten']}}</td>
+                                <td>€ {{$member['totaalbedrag']}}</td>
                             </tr>
                         @endforeach
                         </tbody>
