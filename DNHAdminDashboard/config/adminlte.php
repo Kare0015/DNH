@@ -122,7 +122,7 @@ return [
 //            'label_color' => 'success',
         ],
         [
-            'text'        => 'Ledenbeheer',
+            'text'        => 'Ledenadministratie',
             'url'         => 'members',
             'icon'        => 'users',
         ],

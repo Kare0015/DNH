@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/members', 'HomeController@membersIndex');
+
 Route::get('/admin/facturen', 'HomeController@facturen');
 
 Route::get('/admin/facturen/overview', 'HomeController@facturenOverview');

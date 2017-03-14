@@ -26,6 +26,10 @@ class HomeController extends Controller {
         return view('home');
     }
 
+    public function membersIndex() {
+      return view('/members/membersIndex');
+    }
+
     public function facturen() {
         $members = App\Member::all();
         $totalFacturen = count($members);
