@@ -23,7 +23,7 @@
                             <th>Achternaam</th>
                             <th>Woonplaats</th>
                             <th>Aantal boten</th>
-                            <th>Totaalbedag Factuur Periode {{date("Y")-1}}</th>
+                            <th>Totaalbedrag Factuur Periode {{date("Y")-1}}</th>
                             <th></th>
                         </tr>
                         </thead>

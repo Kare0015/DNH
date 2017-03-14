@@ -9,7 +9,7 @@
 @section('content')
     <div class="row">
         <div class="col-xs-12">
-            <p>Selecteer hier de gebruikers om de facturen te genereren.</p>
+            <p>Deze pagina geeft een transactielijst weer waarin alle transacties terug komen.</p>
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">Leden</h3>
@@ -19,11 +19,11 @@
                     <table id="example1" class="table table-bordered table-striped table-hover">
                         <thead>
                         <tr>
-                            <th>Voornaam</th>
-                            <th>Achternaam</th>
-                            <th>Woonplaats</th>
-                            <th>Aantal boten</th>
-                            <th>Totaalbedag Factuur Periode {{date("Y")-1}}</th>
+                            <th>Rubriek</th>
+                            <th>Klantnaam</th>
+                            <th>Bootnaam</th>
+                            <th>Bedrag</th>
+                            <th>Factuurdatum</th>
                             <th></th>
                         </tr>
                         </thead>
@@ -35,7 +35,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
+                                <td>{{date("d-m-y")}}</td>
                             </tr>
                         </tbody>
                     </table>
