@@ -24,6 +24,18 @@
                             <th>Aantal boten</th>
                         </tr>
                         </thead>
+                        <tbody>
+                        {{--{{ dd(get_defined_vars()) }}--}}
+                        {{--{{ dd(get_defined_vars()['__data']) }}--}}
+                        @foreach($members as $member)
+                            <tr>
+                                <td>{{$member['voornaam']}}</td>
+                                <td>{{$member['achternaam']}}</td>
+                                <td>{{$member['woonplaats']}}</td>
+                                <td>{{$member['boten']}}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
                     </table>
                     <br/>
                     <a class="btn btn-primary" href="">Lid toevoegen</a>

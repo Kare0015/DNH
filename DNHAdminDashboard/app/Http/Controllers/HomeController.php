@@ -27,7 +27,8 @@ class HomeController extends Controller {
     }
 
     public function membersIndex() {
-      return view('/members/membersIndex');
+      $members = App\Member::all();
+        return view('/members/membersIndex', compact('members'));
     }
 
     public function facturen() {
