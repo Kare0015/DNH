@@ -38,15 +38,14 @@
                                 <td>{{$member['boten']}}</td>
                                 <td>€ {{$member['totaalbedrag']}}</td>
                                 <th>
-                                    <a href="/admin/enkelefactuur" class="btn btn-primary">Genereer {{$totalFacturen}} facturen</a>
+                                    <a href="/admin/enkelefactuur/{{$member['id']}}" class="btn btn-primary">Genereer deze factuur</a>
                                 </th>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
-                    <br />
+                    <br/>
                     <a class="btn btn-primary" href="/admin/facturen/overview">Genereer alle facturen ({{$totalFacturen}})</a>
-
                 </div>
                 <!-- /.box-body -->
             </div>

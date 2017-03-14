@@ -3,19 +3,16 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1>Facturen generen</h1>
+    <h1>Transactielijst</h1>
 @stop
 
 @section('content')
     <div class="row">
         <div class="col-xs-12">
             <p>Selecteer hier de gebruikers om de facturen te genereren.</p>
-
-
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">Leden</h3>
-
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -27,24 +24,22 @@
                             <th>Woonplaats</th>
                             <th>Aantal boten</th>
                             <th>Totaalbedag Factuur Periode {{date("Y")-1}}</th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
                         {{--{{ dd(get_defined_vars()) }}--}}
                         {{--{{ dd(get_defined_vars()['__data']) }}--}}
-                        @foreach($members as $member)
                             <tr>
-                                <td>{{$member['voornaam']}}</td>
-                                <td>{{$member['achternaam']}}</td>
-                                <td>{{$member['woonplaats']}}</td>
-                                <td>{{$member['boten']}}</td>
-                                <td>€ {{$member['totaalbedrag']}}</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                             </tr>
-                        @endforeach
                         </tbody>
                     </table>
-                    <br />
-                    <button class="btn btn-primary" type="submit">Genereer {{$totalFacturen}} facturen</button>
+                    <br/>
                 </div>
                 <!-- /.box-body -->
             </div>

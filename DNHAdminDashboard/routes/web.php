@@ -21,7 +21,9 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/admin/facturen', 'HomeController@facturen');
 
-Route::get('/admin/enkelefactuur', 'HomeController@enkelefactuur');
+Route::get('/admin/enkelefactuur/{id}', 'HomeController@enkelefactuur');
 
 Route::get('/admin/facturen/overview', 'HomeController@facturenOverview');
+
+Route::get('/transactions/translist', 'HomeController@translist');
 
