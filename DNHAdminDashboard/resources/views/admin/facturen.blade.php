@@ -23,7 +23,8 @@
                             <th>Achternaam</th>
                             <th>Woonplaats</th>
                             <th>Aantal boten</th>
-                            <th>Totaalbedag Factuur Periode {{date("Y")-1}}</th>
+                            <th>Totaalbedrag Factuur Periode {{date("Y")-1}}</th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -36,11 +37,14 @@
                                 <td>{{$member['woonplaats']}}</td>
                                 <td>{{$member['boten']}}</td>
                                 <td>€ {{$member['totaalbedrag']}}</td>
+                                <th>
+                                    <a href="/admin/enkelefactuur/{{$member['id']}}" class="btn btn-primary">Genereer deze factuur</a>
+                                </th>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
-                    <br />
+                    <br/>
                     <a class="btn btn-primary" href="/admin/facturen/overview">Genereer alle facturen ({{$totalFacturen}})</a>
                 </div>
                 <!-- /.box-body -->

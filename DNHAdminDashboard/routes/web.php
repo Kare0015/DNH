@@ -19,15 +19,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/admin/facturen', 'HomeController@facturen');
+Route::get('/admin/facturen', 'FacturenController@facturen');
 
-Route::get('/admin/facturen/overview', 'HomeController@facturenOverview');
+Route::get('/admin/enkelefactuur/{id}', 'FacturenController@enkelefactuur');
+
+Route::get('/admin/facturen/overview', 'FacturenController@facturenOverview');
+
+Route::get('/transactions/translist', 'FacturenController@translist');
 
 Route::get('/members', 'MemberController@index');
 
 Route::resource('member', 'MemberController');
-
-Route::post('/members/toevoegen', array('as'=>'toevoegen', 'uses' => 'MemberController@create'));
 
 Route::get('/members/toevoegen', function() {
     return view('members.create');

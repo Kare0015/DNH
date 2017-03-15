@@ -104,8 +104,8 @@
     </head>
 
     <body>
-
-    @foreach($members as $member)
+    {{--{{ dd(get_defined_vars()) }}--}}
+    {{--@foreach($members as $member)--}}
         <div class="invoice-box">
             <table cellpadding="0" cellspacing="0">
                 <tr class="top">
@@ -214,5 +214,5 @@
                 </tr>
             </table>
         </div>
-    @endforeach
+    {{--@endforeach--}}
 @stop

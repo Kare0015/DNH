@@ -133,6 +133,13 @@ return [
 //            'label'       => 4,
 //            'label_color' => 'success',
         ],
+        [
+            'text'        => 'Transactielijst',
+            'url'         => 'transactions/translist',
+            'icon'        => 'credit-card',
+//            'label'       => 4,
+//            'label_color' => 'success',
+        ],
 //        'ACCOUNT SETTINGS',
 //        [
 //            'text' => 'Profile',
