@@ -28,19 +28,26 @@ class MemberController extends Controller
 
         // Check if the form was correctly filled in
         $this->validate ( $request, [
-            'voornaam' => 'required|max:255',
-            'tussenvoegsel' => 'max:255',
-            'achternaam' => 'required|max:255',
+            'firstname' => 'required|max:255',
+            'prefix' => 'max:255',
+            'surname' => 'required|max:255',
             'email' => 'required|email|unique:users,email|max:255',
-            'woonplaats' => 'required|max:255',
+            'street' => 'required|max:255',
+            'postalCode' => 'required|max:255',
+            'postalCode' => 'required|max:255',
+            'city' => 'required|max:255',
         ] );
         // Create new User object with the info in the request
         $member = Member::create ( [
-            'voornaam' => $request ['voornaam'],
-            'tussenvoegsel' => $request ['tussenvoegsel'],
-            'achternaam' => $request ['achternaam'],
+            'firstname' => $request ['firstname'],
+            'prefix' => $request ['prefix'],
+            'surname' => $request ['surname'],
             'email' => $request ['email'],
-            'woonplaats' => $request ['woonplaats'],
+            'street' => $request ['street'],
+            'number' => $request ['number'],
+            'postalCode' => $request ['postalCode'],
+            'city' => $request ['city'],
+
         ] );
         // Save this object in the database
         $member->save ();

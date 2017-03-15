@@ -15,11 +15,14 @@ class CreateMembersTable extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('voornaam');
-            $table->string('tussenvoegsel');
-            $table->string('achternaam');
+            $table->string('firstname');
+            $table->string('prefix');
+            $table->string('surname');
             $table->string('email');
-            $table->string('woonplaats');
+            $table->string('street');
+            $table->string('number');
+            $table->string('postalCode');
+            $table->string('city');
             $table->timestamps();
         });
     }

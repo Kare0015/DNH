@@ -19,7 +19,7 @@
                             <th>Tussenvoegsel</th>
                             <th>Achternaam</th>
                             <th>Email</th>
-                            <th>Woonplaats</th>
+                            <th>Adres</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -27,11 +27,11 @@
                         {{--{{ dd(get_defined_vars()['__data']) }}--}}
                         @foreach($members as $member)
                             <tr>
-                                <td>{{$member['voornaam']}}</td>
-                                <td>{{$member['tussenvoegsel']}}</td>
-                                <td>{{$member['achternaam']}}</td>
+                                <td>{{$member['firstname']}}</td>
+                                <td>{{$member['prefix']}}</td>
+                                <td>{{$member['surname']}}</td>
                                 <td>{{$member['email']}}</td>
-                                <td>{{$member['woonplaats']}}</td>
+                                <td>{{$member['street']."  ".$member['number'].", ".$member['city']}}</td>
                             </tr>
                         @endforeach
                         </tbody>

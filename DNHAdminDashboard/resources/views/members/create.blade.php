@@ -20,24 +20,36 @@
                             <tr>
                                 <div class="form-group">
                                     <div class="col-sm-6">
-                                        {!! Form::label('voornaam', 'Voornaam', ['class' => 'control-label']) !!}
-                                        {!! Form::text('voornaam', null, ['class' => 'form-control', 'placeholder' => 'Voornaam']) !!}
+                                        {!! Form::label('firstname', 'Voornaam', ['class' => 'control-label']) !!}
+                                        {!! Form::text('firstname', null, ['class' => 'form-control', 'placeholder' => 'Voornaam']) !!}
                                     </div>
                                     <div class="col-sm-6">
-                                        {!! Form::label('tussenvoegsel', 'Tussenvoegsel', ['class' => 'control-label']) !!}
-                                        {!! Form::text('tussenvoegsel', null, ['class' => 'form-control', 'placeholder' => 'Tussenvoegsel']) !!}
+                                        {!! Form::label('prefix', 'Tussenvoegsel', ['class' => 'control-label']) !!}
+                                        {!! Form::text('prefix', null, ['class' => 'form-control', 'placeholder' => 'Tussenvoegsel']) !!}
                                     </div>
                                     <div class="col-sm-6">
-                                        {!! Form::label('achternaam', 'Achternaam', ['class' => 'control-label']) !!}
-                                        {!! Form::text('achternaam', null, ['class' => 'form-control', 'placeholder' => 'Achternaam']) !!}
+                                        {!! Form::label('surname', 'Achternaam', ['class' => 'control-label']) !!}
+                                        {!! Form::text('surname', null, ['class' => 'form-control', 'placeholder' => 'Achternaam']) !!}
                                     </div>
                                     <div class="col-sm-6">
-                                        {!! Form::label('email', 'Email', ['class' => 'control-label']) !!}
+                                        {!! Form::label('email', 'Emailadres', ['class' => 'control-label']) !!}
                                         {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email']) !!}
                                     </div>
                                     <div class="col-sm-6">
-                                        {!! Form::label('woonplaats', 'Woonplaats', ['class' => 'control-label']) !!}
-                                        {!! Form::text('woonplaats', null, ['class' => 'form-control', 'placeholder' => 'Woonplaats']) !!}
+                                        {!! Form::label('street', 'Straatnaam', ['class' => 'control-label']) !!}
+                                        {!! Form::text('street', null, ['class' => 'form-control', 'placeholder' => 'Straatnaam']) !!}
+                                    </div>
+                                    <div class="col-sm-6">
+                                        {!! Form::label('number', 'Huisnummer', ['class' => 'control-label']) !!}
+                                        {!! Form::text('number', null, ['class' => 'form-control', 'placeholder' => 'Nummer']) !!}
+                                    </div>
+                                    <div class="col-sm-6">
+                                        {!! Form::label('postalCode', 'Postcode', ['class' => 'control-label']) !!}
+                                        {!! Form::text('postalCode', null, ['class' => 'form-control', 'placeholder' => 'Postcode']) !!}
+                                    </div>
+                                    <div class="col-sm-6">
+                                        {!! Form::label('city', 'Woonplaats', ['class' => 'control-label']) !!}
+                                        {!! Form::text('city', null, ['class' => 'form-control', 'placeholder' => 'Woonplaats']) !!}
                                     </div>
                                 </div>
 
