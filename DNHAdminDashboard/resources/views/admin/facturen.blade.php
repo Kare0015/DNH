@@ -10,12 +10,9 @@
     <div class="row">
         <div class="col-xs-12">
             <p>Selecteer hier de gebruikers om de facturen te genereren.</p>
-
-
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">Leden</h3>
-
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -26,24 +23,25 @@
                             <th>Achternaam</th>
                             <th>Woonplaats</th>
                             <th>Aantal boten</th>
-                            <th>Totaalbedag Factuur Periode XXXX</th>
+                            <th>Totaalbedag Factuur Periode {{date("Y")-1}}</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($leden as $lid)
-                            {{--{{dd($lid)}}--}}
+                        {{--{{ dd(get_defined_vars()) }}--}}
+                        {{--{{ dd(get_defined_vars()['__data']) }}--}}
+                        @foreach($members as $member)
                             <tr>
-                                <td>{{$lid['voornaam']}}</td>
-                                <td>{{$lid['achternaam']}}</td>
-                                <td>{{$lid['woonplaats']}}</td>
-                                <td>{{$lid['boten']}}</td>
-                                <td>€ {{$lid['totaalbedrag']}}</td>
+                                <td>{{$member['voornaam']}}</td>
+                                <td>{{$member['achternaam']}}</td>
+                                <td>{{$member['woonplaats']}}</td>
+                                <td>{{$member['boten']}}</td>
+                                <td>€ {{$member['totaalbedrag']}}</td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
                     <br />
-                    <button class="btn btn-primary" type="submit">Genereer x facturen</button>
+                    <a class="btn btn-primary" href="/admin/facturen/overview">Genereer alle facturen ({{$totalFacturen}})</a>
                 </div>
                 <!-- /.box-body -->
             </div>
