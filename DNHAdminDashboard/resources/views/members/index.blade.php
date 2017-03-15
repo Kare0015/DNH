@@ -3,16 +3,13 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1>Ledenadministratie</h1>
+    <h1>Leden</h1>
 @stop
 
 @section('content')
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
-                <div class="box-header">
-                    <h3 class="box-title">Leden</h3>
-                </div>
                 <!-- /.box-header -->
                 <div class="box-body">
                     <table id="example1" class="table table-bordered table-striped table-hover">
@@ -38,7 +35,7 @@
                         </tbody>
                     </table>
                     <br/>
-                    <a class="btn btn-primary" href="">Lid toevoegen</a>
+                    <a class="btn btn-primary" href="/members/toevoegen">Lid toevoegen</a>
                 </div>
                 <!-- /.box-body -->
             </div>
