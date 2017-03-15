@@ -12,10 +12,14 @@ class MembersTableSeeder extends Seeder
     public function run()
     {
         DB::table('members')->insert([
-            'voornaam' => 'Pieter',
-            'achternaam' => 'Boot',
-            'woonplaats' => 'Nieuwland',
-            'boten' => 5
+            'firstname' => 'Pieter',
+            'prefix' => '',
+            'surname' => 'Boot',
+            'email' => 'pieter@boot.nl',
+            'street' => 'Prins Hendrikweg',
+            'number' => '12',
+            'postalCode' => '3247DB',
+            'city' => 'Vlissingen',
         ]);
     }
 }
