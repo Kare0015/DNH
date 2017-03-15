@@ -26,11 +26,6 @@ class HomeController extends Controller {
         return view('home');
     }
 
-    public function membersIndex() {
-      $members = App\Member::all();
-        return view('/members/membersIndex', compact('members'));
-    }
-
     public function facturen() {
         $members = App\Member::all();
         $totalFacturen = count($members);
