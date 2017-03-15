@@ -13,9 +13,10 @@ class MembersTableSeeder extends Seeder
     {
         DB::table('members')->insert([
             'voornaam' => 'Pieter',
+            'tussenvoegsel' => '',
             'achternaam' => 'Boot',
+            'email' => 'pieter@boot.nl',
             'woonplaats' => 'Nieuwland',
-            'boten' => 5
         ]);
     }
 }

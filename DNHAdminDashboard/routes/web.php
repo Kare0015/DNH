@@ -25,6 +25,8 @@ Route::get('/admin/facturen/overview', 'HomeController@facturenOverview');
 
 Route::get('/members', 'MemberController@index');
 
+Route::resource('member', 'MemberController');
+
 Route::post('/members/toevoegen', array('as'=>'toevoegen', 'uses' => 'MemberController@create'));
 
 Route::get('/members/toevoegen', function() {

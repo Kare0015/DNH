@@ -16,9 +16,10 @@
                         <thead>
                         <tr>
                             <th>Voornaam</th>
+                            <th>Tussenvoegsel</th>
                             <th>Achternaam</th>
+                            <th>Email</th>
                             <th>Woonplaats</th>
-                            <th>Aantal boten</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -27,9 +28,10 @@
                         @foreach($members as $member)
                             <tr>
                                 <td>{{$member['voornaam']}}</td>
+                                <td>{{$member['tussenvoegsel']}}</td>
                                 <td>{{$member['achternaam']}}</td>
+                                <td>{{$member['email']}}</td>
                                 <td>{{$member['woonplaats']}}</td>
-                                <td>{{$member['boten']}}</td>
                             </tr>
                         @endforeach
                         </tbody>

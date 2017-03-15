@@ -19,18 +19,33 @@ class MemberController extends Controller
         return view('/members/index', compact('members'));
     }
 
-    public function create(Request $request) {
-
-        $member = new Member;
-
-        $member->voornaam = $request->input('voornaam');
-        $member->achternaam = $request->input('achternaam');
-        $member->woonplaats = $request->input('woonplaats');
-        $member->boten = $request->input('boten');
-        $member->save();
+    public function create() {
+        return view ('members/toevoegen');
+    }
 
 
-        return redirect('/members/index', compact('index')); //
+    public function store(Request $request) {
+
+        // Check if the form was correctly filled in
+        $this->validate ( $request, [
+            'voornaam' => 'required|max:255',
+            'tussenvoegsel' => 'max:255',
+            'achternaam' => 'required|max:255',
+            'email' => 'required|email|unique:users,email|max:255',
+            'woonplaats' => 'required|max:255',
+        ] );
+        // Create new User object with the info in the request
+        $member = Member::create ( [
+            'voornaam' => $request ['voornaam'],
+            'tussenvoegsel' => $request ['tussenvoegsel'],
+            'achternaam' => $request ['achternaam'],
+            'email' => $request ['email'],
+            'woonplaats' => $request ['woonplaats'],
+        ] );
+        // Save this object in the database
+        $member->save ();
+        // Redirect to the user.index page with a success message.
+        return redirect('/members');
     }
 
 }
