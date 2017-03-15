@@ -19,11 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/admin/facturen', 'HomeController@facturen');
+Route::get('/admin/facturen', 'FacturenController@facturen');
 
-Route::get('/admin/enkelefactuur/{id}', 'HomeController@enkelefactuur');
+Route::get('/admin/enkelefactuur/{id}', 'FacturenController@enkelefactuur');
 
-Route::get('/admin/facturen/overview', 'HomeController@facturenOverview');
+Route::get('/admin/facturen/overview', 'FacturenController@facturenOverview');
 
-Route::get('/transactions/translist', 'HomeController@translist');
+Route::get('/transactions/translist', 'FacturenController@translist');
 

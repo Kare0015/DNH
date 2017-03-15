@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App;
 use App\Member;
 
+
+
 class HomeController extends Controller
 {
     /**
@@ -28,31 +30,5 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
-    }
-
-    public function facturen()
-    {
-        $members = App\Member::all();
-        $totalFacturen = count($members);
-        $data = array(
-            'members' => $members,
-            'totalFacturen' => $totalFacturen
-        );
-
-        return view('/admin/facturen', $data);
-    }
-
-    public function enkelefactuur($id){
-        $member = App\Member::find($id);
-        return view ('/facturen/overview', compact ('member'));
-    }
-
-    public function facturenOverview(){
-        $members = App\Member::all();
-        return view('/facturen/overview', compact('members'));
-    }
-
-    public function translist(){
-        return view('/transactions/translist');
     }
 }
