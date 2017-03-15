@@ -19,8 +19,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/members', 'HomeController@membersIndex');
-
 Route::get('/admin/facturen', 'HomeController@facturen');
 
 Route::get('/admin/facturen/overview', 'HomeController@facturenOverview');
+
+Route::get('/members', 'MemberController@index');
+
+Route::post('/members/toevoegen', array('as'=>'toevoegen', 'uses' => 'MemberController@create'));
+
+Route::get('/members/toevoegen', function() {
+    return view('members.create');
+});
