@@ -3,7 +3,7 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1>Leden</h1>
+    <h1>{{$member['firstname']."  ".$member['prefix']." ".$member['surname']}}</h1>
 @stop
 
 @section('content')
@@ -19,7 +19,7 @@
         <tr>
             <td class="table-text">{{ $member->firstname }}</td>
             <td class="table-text">{{ $member->prefix }}</td>
-            <td class="table-text">{{ $member->lastname }}</td>
+            <td class="table-text">{{ $member->surname }}</td>
             <td class="table-text">{{ $member->email }}</td>
             <td class="table-text">{{ $member->street, $member->number, $member->city }}</td>
             {{--@if(!empty($user->role->name))
