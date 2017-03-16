@@ -20,7 +20,7 @@ class MemberController extends Controller
     }
 
     public function create() {
-        return view ('members/toevoegen');
+        return view ('members/create');
     }
 
 
@@ -33,7 +33,7 @@ class MemberController extends Controller
             'surname' => 'required|max:255',
             'email' => 'required|email|unique:users,email|max:255',
             'street' => 'required|max:255',
-            'postalCode' => 'required|max:255',
+            'number' => 'required|max:255',
             'postalCode' => 'required|max:255',
             'city' => 'required|max:255',
         ] );
@@ -54,5 +54,13 @@ class MemberController extends Controller
         // Redirect to the user.index page with a success message.
         return redirect('/members');
     }
+
+    public function show($id)
+    {
+        return view ( 'members/show', [
+            'member' => Member::findOrFail($id),
+        ] );
+    }
+
 
 }

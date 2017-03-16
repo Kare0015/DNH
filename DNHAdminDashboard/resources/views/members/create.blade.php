@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    {!! Form::open(['route' => ['member.store'], 'method' => 'post', 'class' => 'form-horizontal']) !!}
+    {!! Form::open(['action' => ['MemberController@store'], 'method' => 'post', 'class' => 'form-horizontal']) !!}
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
