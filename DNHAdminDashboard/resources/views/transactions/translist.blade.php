@@ -13,6 +13,7 @@
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">Leden</h3>
+                    <a href="{{ url('/transactions/toevoegen') }}" class="btn btn-primary pull-right">Handmatig toevoegen</a>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
