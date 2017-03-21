@@ -24,8 +24,6 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {{--{{ dd(get_defined_vars()) }}--}}
-                        {{--{{ dd(get_defined_vars()['__data']) }}--}}
                         @foreach($members as $member)
                             <tr>
                                 <td>{{$member['firstname']}}</td>

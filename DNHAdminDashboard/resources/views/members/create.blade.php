@@ -15,8 +15,6 @@
                 <div class="box-body">
                     <table id="example1" class="table table-bordered table-striped table-hover">
                         <tbody>
-                        {{--{{ dd(get_defined_vars()) }}--}}
-                        {{--{{ dd(get_defined_vars()['__data']) }}--}}
                             <tr>
                                 <div class="form-group">
                                     <div class="col-sm-6">

@@ -26,7 +26,7 @@ class MemberController extends Controller
 
     public function store(Request $request) {
 
-        // Check if the form was correctly filled in
+        // Validates form
         $this->validate ( $request, [
             'firstname' => 'required|max:255',
             'prefix' => 'max:255',
@@ -37,7 +37,7 @@ class MemberController extends Controller
             'postalCode' => 'required|max:255',
             'city' => 'required|max:255',
         ] );
-        // Create new User object with the info in the request
+        // Creates new Member with the info in the request
         $member = Member::create ( [
             'firstname' => $request ['firstname'],
             'prefix' => $request ['prefix'],
@@ -49,9 +49,9 @@ class MemberController extends Controller
             'city' => $request ['city'],
 
         ] );
-        // Save this object in the database
+        // Saves this object in the database
         $member->save ();
-        // Redirect to the user.index page with a success message.
+        // Redirects to the member.index page
         return redirect('/members');
     }
 

@@ -22,9 +22,6 @@
             <td class="table-text">{{ $member->surname }}</td>
             <td class="table-text">{{ $member->email }}</td>
             <td class="table-text">{{ $member->street, $member->number, $member->city }}</td>
-            {{--@if(!empty($user->role->name))
-                <td class="table-text">{{ $user->role->name }}</td>
-            @endif --}}
         </tr>
         </tbody>
     </table>

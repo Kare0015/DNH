@@ -20,9 +20,10 @@
                         <thead>
                         <tr>
                             <th>Voornaam</th>
+                            <th>Tussenvoegsel</th>
                             <th>Achternaam</th>
-                            <th>Woonplaats</th>
-                            <th>Aantal boten</th>
+                            <th>Adres</th>
+                            <th>Boten</th>
                             <th>Totaalbedrag Factuur Periode {{date("Y")-1}}</th>
                             <th></th>
                         </tr>
@@ -32,9 +33,10 @@
                         {{--{{ dd(get_defined_vars()['__data']) }}--}}
                         @foreach($members as $member)
                             <tr>
-                                <td>{{$member['voornaam']}}</td>
-                                <td>{{$member['achternaam']}}</td>
-                                <td>{{$member['woonplaats']}}</td>
+                                <td>{{$member['firstname']}}</td>
+                                <td>{{$member['prefix']}}</td>
+                                <td>{{$member['surname']}}</td>
+                                <td>{{$member['street']."  ".$member['number'].", ".$member['city']}}</td>
                                 <td>{{$member['boten']}}</td>
                                 <td>€ {{$member['totaalbedrag']}}</td>
                                 <th>
