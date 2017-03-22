@@ -29,6 +29,20 @@
                     </div>
                 </div>
                 <!-- /.col -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {!! Form::label('rubriek', 'Rubriek', ['class' => 'control-label']) !!}
+                        {!! Form::number('rubriek', null, ['class' => 'form-control', 'placeholder' => '1']) !!}
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {!! Form::label('klantnaam', 'Klant naam', ['class' => 'control-label']) !!}
+                        {!! Form::text('klantnaam', null, ['class' => 'form-control', 'placeholder' => 'klaas']) !!}
+                    </div>
+                </div>
+                <!-- /.col -->
             </div>
             <!-- /.row -->
         </div>

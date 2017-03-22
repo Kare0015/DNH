@@ -16,7 +16,9 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('transactienaam');
-            $table->integer('bedrag');
+            $table->string('klantnaam');
+            $table->string('rubriek');
+            $table->string('bedrag');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateTransactionsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('transactions');
     }
 }

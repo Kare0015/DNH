@@ -17,7 +17,7 @@ class FacturenController extends Controller
             'totalFacturen' => $totalFacturen
         );
 
-        return view('/admin/facturen', $data);
+        return view('/facturen/facturen', $data);
     }
 
     public function facturenOverview(){
@@ -31,9 +31,7 @@ class FacturenController extends Controller
         return view ('/facturen/overview', compact ('member'));
     }
 
-    public function translist(){
-        return view('/transactions/translist');
-    }
+
 
 //    public function createtransaction(){
 //        return view('/transactions/createtransaction');
