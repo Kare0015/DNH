@@ -23,7 +23,7 @@ Route::get('/admin/facturen', 'FacturenController@facturen');
 
 Route::get('/admin/enkelefactuur/{id}', 'FacturenController@enkelefactuur');
 
-Route::get('/admin/facturen/overview', 'FacturenController@facturenOverview');
+Route::get('/facturen/overview', 'FacturenController@facturenOverview');
 
 Route::get('/transactions/translist', 'FacturenController@translist');
 
