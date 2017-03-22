@@ -10,8 +10,6 @@ use App\Transaction;
 class TransactionController extends Controller {
 
     public function store(Request $request) {
-
-        var_dump("indeing");
         // Check if the form was correctly filled in
         $this->validate ( $request, [
             'transactienaam' => 'required|max:255',
@@ -33,6 +31,7 @@ class TransactionController extends Controller {
     }
 
     public function translist(){
-        return view('/transactions/translist');
+        $transactions = App\Transaction::all();
+        return view('/transactions/translist', compact('transactions'));
     }
 }
