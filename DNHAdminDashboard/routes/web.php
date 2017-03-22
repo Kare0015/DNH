@@ -25,7 +25,7 @@ Route::get('/admin/enkelefactuur/{id}', 'FacturenController@enkelefactuur');
 
 Route::get('/facturen/overview', 'FacturenController@facturenOverview');
 
-Route::get('/transactions/translist', 'FacturenController@translist');
+Route::get('/transactions/translist', 'TransactionController@translist');
 
 
 Route::get('/members', 'MemberController@index');

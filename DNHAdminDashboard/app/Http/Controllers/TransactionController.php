@@ -10,8 +10,6 @@ use App\Transaction;
 class TransactionController extends Controller {
 
     public function store(Request $request) {
-
-        var_dump("indeing");
         // Check if the form was correctly filled in
         $this->validate ( $request, [
             'transactienaam' => 'required|max:255',
@@ -26,5 +24,9 @@ class TransactionController extends Controller {
         $transactions->save();
         // Redirect to the user.index page with a success message.
         return redirect('/transactions/translist');
+    }
+    public function translist(){
+        $transactions = App\Transaction::all();
+        return view('/transactions/translist', compact('transactions'));
     }
 }
