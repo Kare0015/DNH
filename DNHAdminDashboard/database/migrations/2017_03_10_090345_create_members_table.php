@@ -14,13 +14,17 @@ class CreateMembersTable extends Migration
     public function up()
     {
         Schema::create('members', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('voornaam');
-            $table->text('achternaam');
-            $table->text('woonplaats');
-            $table->integer('boten');
-            $table->timestamps();
-        });
+        $table->increments('id');
+        $table->string('firstname');
+        $table->string('prefix');
+        $table->string('surname');
+        $table->string('email');
+        $table->string('street');
+        $table->string('number');
+        $table->string('postalCode');
+        $table->string('city');
+        $table->timestamps();
+    });
     }
 
     /**

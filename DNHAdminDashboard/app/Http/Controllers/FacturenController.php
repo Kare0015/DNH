@@ -34,4 +34,8 @@ class FacturenController extends Controller
     public function translist(){
         return view('/transactions/translist');
     }
+
+//    public function createtransaction(){
+//        return view('/transactions/createtransaction');
+//    }
 }

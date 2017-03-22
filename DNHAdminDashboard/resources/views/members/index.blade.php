@@ -3,44 +3,41 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1>Transactielijst</h1>
+    <h1>Leden</h1>
 @stop
 
 @section('content')
     <div class="row">
         <div class="col-xs-12">
-            <p>Deze pagina geeft een transactielijst weer waarin alle transacties terug komen.</p>
             <div class="box">
-                <div class="box-header">
-                    <h3 class="box-title">Leden</h3>
-                    <a href="{{ url('/transactions/toevoegen') }}" class="btn btn-primary pull-right">Handmatig toevoegen</a>
-                </div>
                 <!-- /.box-header -->
                 <div class="box-body">
                     <table id="example1" class="table table-bordered table-striped table-hover">
                         <thead>
                         <tr>
-                            <th>Rubriek</th>
-                            <th>Klantnaam</th>
-                            <th>Bootnaam</th>
-                            <th>Bedrag</th>
-                            <th>Factuurdatum</th>
-                            <th></th>
+                            <th>Voornaam</th>
+                            <th>Tussenvoegsel</th>
+                            <th>Achternaam</th>
+                            <th>Email</th>
+                            <th>Adres</th>
                         </tr>
                         </thead>
                         <tbody>
                         {{--{{ dd(get_defined_vars()) }}--}}
                         {{--{{ dd(get_defined_vars()['__data']) }}--}}
+                        @foreach($members as $member)
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>{{date("d-m-y")}}</td>
+                                <td>{{$member['firstname']}}</td>
+                                <td>{{$member['prefix']}}</td>
+                                <td>{{$member['surname']}}</td>
+                                <td>{{$member['email']}}</td>
+                                <td>{{$member['street']."  ".$member['number'].", ".$member['city']}}</td>
                             </tr>
+                        @endforeach
                         </tbody>
                     </table>
                     <br/>
+                    <a class="btn btn-primary" href="/members/toevoegen">Lid toevoegen</a>
                 </div>
                 <!-- /.box-body -->
             </div>
