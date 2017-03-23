@@ -9,7 +9,8 @@ use App;
 
 class FacturenController extends Controller
 {
-    public function facturen() {
+    public function facturen()
+    {
         $members = App\Member::all();
         $totalFacturen = count($members);
         $data = array(
@@ -17,21 +18,20 @@ class FacturenController extends Controller
             'totalFacturen' => $totalFacturen
         );
 
-        return view('/admin/facturen', $data);
+        return view('/facturen/facturen', $data);
     }
 
-    public function facturenOverview(){
+    public function facturenOverview()
+    {
         $members = App\Member::all();
         return view('/facturen/overview', compact('members'));
 
     }
 
-    public function enkelefactuur($id){
+    public function enkelefactuur($id)
+    {
         $member = App\Member::find($id);
-        return view ('/facturen/overview', compact ('member'));
-    }
-
-    public function translist(){
-        return view('/transactions/translist');
+        return view('/facturen/overview', compact('member'));
     }
 }
+

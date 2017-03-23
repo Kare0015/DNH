@@ -13,6 +13,7 @@
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">Leden</h3>
+                    <a href="{{ url('/transactions/toevoegen') }}" class="btn btn-primary pull-right">Handmatig toevoegen</a>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -20,23 +21,24 @@
                         <thead>
                         <tr>
                             <th>Rubriek</th>
+                            <th>Transactieomschrijving</th>
                             <th>Klantnaam</th>
-                            <th>Bootnaam</th>
                             <th>Bedrag</th>
                             <th>Factuurdatum</th>
-                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
                         {{--{{ dd(get_defined_vars()) }}--}}
                         {{--{{ dd(get_defined_vars()['__data']) }}--}}
+                        @foreach($transactions as $transaction)
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>{{date("d-m-y")}}</td>
+                                <td>{{$transaction['rubriek']}}</td>
+                                <td>{{$transaction['transactienaam']}}</td>
+                                <td>{{$transaction['klantnaam']}}</td>
+                                <td>€ {{$transaction['bedrag']}}</td>
+                                <td>{{$transaction['created_at']}}</td>
                             </tr>
+                        @endforeach
                         </tbody>
                     </table>
                     <br/>

@@ -45,7 +45,7 @@
                         </tbody>
                     </table>
                     <br/>
-                    <a class="btn btn-primary" href="/admin/facturen/overview">Genereer alle facturen ({{$totalFacturen}})</a>
+                    <a class="btn btn-primary" href="/facturen/overview">Genereer alle facturen ({{$totalFacturen}})</a>
                 </div>
                 <!-- /.box-body -->
             </div>
