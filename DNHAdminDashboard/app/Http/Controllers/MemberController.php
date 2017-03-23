@@ -62,5 +62,14 @@ class MemberController extends Controller
         ] );
     }
 
+    public function destroy($id)
+    {
+        // Find the member object in the database
+        $member = Member::findorfail ( $id );
+        // Remove the member from the database
+        $member->delete ();
+        // Redirect to the member.index page with a success message.
+        return redirect ( '/members' )->with( 'success', $member->name.' is verwijderd.' );
+    }
 
 }

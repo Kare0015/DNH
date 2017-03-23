@@ -20,7 +20,6 @@
                             <th>Achternaam</th>
                             <th>Email</th>
                             <th>Adres</th>
-                            <th> </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -31,7 +30,10 @@
                                 <td>{{$member['surname']}}</td>
                                 <td>{{$member['email']}}</td>
                                 <td>{{$member['street']."  ".$member['number'].", ".$member['city']}}</td>
-                                <td><a class="btn btn-default" href="/members/{{$member['id']}}">Profiel bekijken</a></td>
+                                <td style='width:90px;'><a class="btn btn-default" href="/members/{{$member['id']}}">Bekijken</a>
+                                <td>{!! Form::open(['route' => ['member.destroy', $member->id], 'method'=>'DELETE']) !!}
+                                    {!! Form::submit('Verwijderen', array('class'=>'btn btn-danger')) !!}
+                                    {!! Form::close() !!}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -44,19 +46,3 @@
         </div>
     </div>
 @stop
-{{-- @section('scripts')
-
-    <script>
-        jQuery(document).ready(function($) {
-            $(".row-link").click(function() {
-                window.document.location = $(this).data("href");
-            });
-            $('#cohort-tabs a:first').tab('show'); // Select first tab
-
-            $.get(
-                url, datatype, data, success
-            )
-        });
-    </script>
-
-@stop --}}
