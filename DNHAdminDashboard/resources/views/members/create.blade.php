@@ -3,6 +3,9 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
+    <div class="col-sm-1">
+      <a class="btn btn-default" href="{{action('MemberController@index')}}">Terug</a>
+    </div>
     <h1>Lid toevoegen</h1>
 @stop
 
