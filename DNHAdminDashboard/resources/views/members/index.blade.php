@@ -3,7 +3,7 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1>Leden</h1>
+    <h1>Leden Overzicht</h1>
 @stop
 
 @section('content')
@@ -23,8 +23,6 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {{--{{ dd(get_defined_vars()) }}--}}
-                        {{--{{ dd(get_defined_vars()['__data']) }}--}}
                         @foreach($members as $member)
                             <tr>
                                 <td>{{$member['firstname']}}</td>
@@ -32,6 +30,10 @@
                                 <td>{{$member['surname']}}</td>
                                 <td>{{$member['email']}}</td>
                                 <td>{{$member['street']."  ".$member['number'].", ".$member['city']}}</td>
+                                <td style='width:90px;'><a class="btn btn-default" href="/members/{{$member['id']}}">Bekijken</a>
+                                <td>{!! Form::open(['route' => ['member.destroy', $member->id], 'method'=>'DELETE']) !!}
+                                    {!! Form::submit('Verwijderen', array('class'=>'btn btn-danger')) !!}
+                                    {!! Form::close() !!}</td>
                             </tr>
                         @endforeach
                         </tbody>

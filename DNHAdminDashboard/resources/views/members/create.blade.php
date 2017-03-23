@@ -3,11 +3,14 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
+    <div class="col-sm-1">
+      <a class="btn btn-default" href="{{action('MemberController@index')}}">Terug</a>
+    </div>
     <h1>Lid toevoegen</h1>
 @stop
 
 @section('content')
-    {!! Form::open(['route' => ['member.store'], 'method' => 'post', 'class' => 'form-horizontal']) !!}
+    {!! Form::open(['action' => ['MemberController@store'], 'method' => 'post', 'class' => 'form-horizontal']) !!}
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
@@ -15,8 +18,6 @@
                 <div class="box-body">
                     <table id="example1" class="table table-bordered table-striped table-hover">
                         <tbody>
-                        {{--{{ dd(get_defined_vars()) }}--}}
-                        {{--{{ dd(get_defined_vars()['__data']) }}--}}
                             <tr>
                                 <div class="form-group">
                                     <div class="col-sm-6">

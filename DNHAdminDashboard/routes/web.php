@@ -32,12 +32,13 @@ Route::get('/members', 'MemberController@index');
 
 Route::resource('member', 'MemberController');
 
-Route::get('/members/toevoegen', function() {
-    return view('members.create');
-});
-
 Route::resource('transaction', 'TransactionController');
 
 Route::get('/transactions/toevoegen', function() {
     return view('transactions.create');
 });
+Route::get('/members/toevoegen', 'MemberController@create');
+
+Route::post('new-member', array('uses' => 'MemberController@store'));
+
+Route::get('/members/{id}', 'MemberController@show');

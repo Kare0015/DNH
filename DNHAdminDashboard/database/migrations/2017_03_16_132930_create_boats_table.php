@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMembersTable extends Migration
+class CreateBoatsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,12 @@ class CreateMembersTable extends Migration
      */
     public function up()
     {
-        Schema::create('members', function (Blueprint $table) {
-
+        Schema::create('boats', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('firstname');
-            $table->string('prefix')->nullable();
-            $table->string('surname');
-            $table->string('email');
-            $table->string('street');
-            $table->string('number');
-            $table->string('postalCode');
-            $table->string('city');
+            $table->string('boatname');
+            $table->integer('boatlength');
             $table->timestamps();
         });
-
     }
 
     /**

@@ -20,24 +20,24 @@ class MemberController extends Controller
     }
 
     public function create() {
-        return view ('members/toevoegen');
+        return view ('members/create');
     }
 
 
     public function store(Request $request) {
 
-        // Check if the form was correctly filled in
+        // Validates form
         $this->validate ( $request, [
             'firstname' => 'required|max:255',
-            'prefix' => 'max:255',
+            'prefix' => 'nullable',
             'surname' => 'required|max:255',
             'email' => 'required|email|unique:users,email|max:255',
             'street' => 'required|max:255',
-            'postalCode' => 'required|max:255',
+            'number' => 'required|max:255',
             'postalCode' => 'required|max:255',
             'city' => 'required|max:255',
         ] );
-        // Create new User object with the info in the request
+        // Creates new Member with the info in the request
         $member = Member::create ( [
             'firstname' => $request ['firstname'],
             'prefix' => $request ['prefix'],
@@ -49,10 +49,60 @@ class MemberController extends Controller
             'city' => $request ['city'],
 
         ] );
-        // Save this object in the database
+        // Saves this object in the database
         $member->save ();
-        // Redirect to the user.index page with a success message.
+        // Redirects to the member.index page
         return redirect('/members');
+    }
+
+    public function show($id)
+    {
+        return view ( 'members/show', ['member' => Member::findOrFail($id),] );
+    }
+
+    public function edit($id)
+    {
+        return view ( 'members/edit', ['member' => Member::findOrFail($id),] );
+    }
+
+    public function update(Request $request, $id)
+    {
+        // Check if the form was correctly filled in
+        $this->validate ( $request, [
+          'firstname' => 'required|max:255',
+          'prefix' => 'nullable',
+          'surname' => 'required|max:255',
+          'email' => 'required|max:255',
+          'street' => 'required|max:255',
+          'number' => 'required|max:255',
+          'postalCode' => 'required|max:255',
+          'city' => 'required|max:255',
+        ] );
+
+        $member = Member::findorfail ($id);
+        $member->firstname = $request ['firstname'];
+        $member->prefix = $request ['prefix'];
+        $member->surname = $request ['surname'];
+        $member->email = $request ['email'];
+        $member->street = $request ['street'];
+        $member->number = $request ['number'];
+        $member->postalCode = $request ['postalCode'];
+        $member->city = $request ['city'];
+        // Save the changes in the database
+        $member->save ();
+
+        // Redirect to the category.index page with a success message.
+        return redirect ( 'member' )->with( 'success', $member->firstname.' '.$member->prefix.' '.$member->surname.' is bijgewerkt.' );
+    }
+
+    public function destroy($id)
+    {
+        // Find the member object in the database
+        $member = Member::findorfail ( $id );
+        // Remove the member from the database
+        $member->delete ();
+        // Redirect to the member.index page with a success message.
+        return redirect ( '/members' )->with( 'success', $member->name.' is verwijderd.' );
     }
 
 }
