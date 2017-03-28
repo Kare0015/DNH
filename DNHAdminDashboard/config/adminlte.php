@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'logo' => '<strong>De Nieuwlandse Haven</strong> Administratie Dashboard',
+    'logo' => '<h11 style="font-size:18px">De Nieuwlandse Haven</h11> Administratie Dashboard',
 
     'logo_mini' => 'DNH',
 

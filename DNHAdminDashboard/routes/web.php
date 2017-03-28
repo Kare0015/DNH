@@ -21,3 +21,6 @@ Route::get('/home', 'HomeController@index');
 
 
 Route::get('/admin/facturen', 'HomeController@facturen');
+
+Route::get('/calculate', 'Calculatecontroller@index');
+

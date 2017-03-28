@@ -8,4 +8,7 @@
 
 @section('content')
     <p>Welkom beste ....</p>
+
 @stop
+
+
