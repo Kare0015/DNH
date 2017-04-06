@@ -15,10 +15,10 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('TransactieNaam');
-            $table->string('KlantNaam');
-            $table->string('Rubriek');
-            $table->string('Bedrag');
+            $table->string('transactionname');
+            $table->string('customername');
+            $table->string('category');
+            $table->string('amount');
             $table->timestamps();
         });
     }
