@@ -137,8 +137,8 @@
                                 </td>
 
                                 <td>
-                                    {{$member['voornaam'] . ' ' . $member['achternaam']}}<br>
-                                    {{$member['woonplaats']}}
+                                    {{$member['firstname'] . ' ' . $member['prefix'] . ' ' . $member['surname']}}<br>
+                                    {{$member['city']}}
                                 </td>
                             </tr>
                         </table>

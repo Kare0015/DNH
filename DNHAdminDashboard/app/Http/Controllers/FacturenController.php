@@ -34,4 +34,3 @@ class FacturenController extends Controller
         return view('/facturen/overview', compact('member'));
     }
 }
-
