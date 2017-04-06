@@ -15,6 +15,7 @@ class CreateBoatsTable extends Migration
     {
         Schema::create('boats', function (Blueprint $table) {
             $table->increments('id');
+            $table->boolean('mainBoat');
             $table->string('boatname');
             $table->integer('boatlength');
             $table->timestamps();
@@ -28,6 +29,6 @@ class CreateBoatsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('members');
+        Schema::dropIfExists('boats');
     }
 }
